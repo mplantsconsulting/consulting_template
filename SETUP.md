@@ -6,20 +6,41 @@
 
 ## 1. リポジトリを作る（5分）
 
+このリポジトリは **GitHub のテンプレートリポジトリ**である。
+**fork や clone ではなく「テンプレートから作成」を使う。**
+履歴が引き継がれず、案件ごとに独立した最初のコミットから始まる。
+
+### ブラウザから作る場合
+
+1. [consulting_template](https://github.com/mplantsconsulting/consulting_template) を開く
+2. 緑の **`Use this template`** → **`Create a new repository`**
+3. Owner を `mplantsconsulting`、Repository name を案件名にする
+4. **Private を選ぶ**（クライアント情報を扱うため。既定を変えない）
+5. `Create repository`
+
+### CLI から作る場合
+
 ```bash
-# GitHub のテンプレート機能を使う場合はそちらが早い
-git clone https://github.com/mplantsconsulting/consulting_template.git <案件名>
+gh repo create mplantsconsulting/<案件名> \
+  --template mplantsconsulting/consulting_template \
+  --private --clone
 cd <案件名>
-rm -rf .git && git init
 ```
 
 案件名は `<クライアント略称>_<テーマ>` 程度で十分（例: `acme_churn`）。
+
+### 作成後
 
 ```bash
 uv sync   # 依存関係の取得
 ```
 
 `pyproject.toml` の `name` / `description` を案件名に書き換える。
+
+> **`Use this template` を使う理由**
+> clone だと元リポジトリの履歴と remote が付いてくるため、
+> **案件のコミットを誤ってテンプレート側へ push する事故が起きる。**
+> テンプレートから作成すれば remote は新しいリポジトリを指す。
 
 ---
 
@@ -64,9 +85,15 @@ uv sync   # 依存関係の取得
 ## 5. 最初のコミット
 
 ```bash
+git remote -v   # ★ 自分の案件リポジトリを指していることを確認する
 git add -A
-git commit -m "chore: 案件テンプレートの初期設定（KGI・情報源の骨組み）"
+git commit -m "chore: 案件の初期設定（KGI・情報源の骨組み）"
+git push
 ```
+
+**`git remote -v` の確認を飛ばさない。**
+`consulting_template` を指していたら、テンプレートから作り直す
+（案件のクライアント情報をテンプレート側に push してはいけない）。
 
 ---
 
