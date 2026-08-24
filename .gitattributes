@@ -1,0 +1,40 @@
+# 改行コードの扱い
+# リポジトリ内は常にLFで保持する。core.autocrlf の設定に関わらず結果が揃う。
+* text=auto eol=lf
+
+# Windows専用スクリプトはCRLFでないと動かないため維持する
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+
+# 言語ヒント（差分の読みやすさ）
+*.md   text diff=markdown
+*.py   text diff=python
+*.html text diff=html
+*.css  text diff=css
+
+# バイナリ扱い（改行変換もテキスト差分も行わない）
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
+*.mp4  binary
+*.woff binary
+*.woff2 binary
+
+# Office / データ系。共有フォルダ由来の資料を扱うため明示する
+*.xlsx binary
+*.xlsm binary
+*.xls  binary
+*.xlsb binary
+*.docx binary
+*.doc  binary
+*.pptx binary
+*.ppt  binary
+*.msg  binary
+*.eml  binary
+*.twb  binary
+*.fmp12 binary
