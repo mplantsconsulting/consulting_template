@@ -46,8 +46,9 @@
 | [docs/ideas/](docs/ideas/) | **提案** | 施策候補（採否の決定はしない。判断材料を揃える） |
 | [docs/presentations/](docs/presentations/) | **提示** | 意思決定者への提出資料。対外的に出るため検証のハードルが一段高い |
 | [docs/client-qa/](docs/client-qa/) | **確認事項** | データでは決着しない論点を、答えやすい形で照会する |
-| [scripts/](scripts/) | 再現スクリプト（分析IDと1対1） | |
+| [scripts/](scripts/) | 再現スクリプト（分析IDと1対1。担当者別に分ける） | |
 | [src/](src/) | 複数の分析で使う共通処理 | |
+| [notebooks/](notebooks/) | 探索・試行錯誤の作業場。**Git管理外**（[運用](notebooks/README.md)） | |
 | [data/](data/) | 入力データ。**Git管理外**（[構成](data/README.md)） | |
 | [.claude/](.claude/) | Claude 用のスキルとコマンド（[一覧](.claude/README.md)） | |
 
@@ -87,7 +88,7 @@ docs/analysis/_TEMPLATE.md をコピーして採番
         ↓
 ① 計画（問い・データソース・前提・手法・判定基準）      → 計画中 / 計画確定
         ↓
-② 集計         scripts/ANL-NNN_<テーマ>.py             → 検証中
+② 集計         scripts/<担当者名>/ANL-NNN_<テーマ>.py  → 検証中
         ↓
 ③ 結果・解釈   図は figures/、集計値は tables/ へ出力    → 完了
 ```

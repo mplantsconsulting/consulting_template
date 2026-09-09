@@ -1,6 +1,6 @@
 # IDEA-NNN <施策名>
 
-<!-- 使い方: IDEA-NNN_<施策名>.md にリネームして採番する。この HTML コメントは削除する -->
+<!-- 使い方: 自分の起案者ディレクトリ（docs/ideas/<起案者名>/）にコピーし、IDEA-NNN_<施策名>.md にリネームして採番する（NNNは自分のディレクトリ内で連番）。この HTML コメントは削除する -->
 
 - ステータス: `draft`
 - 起案日 / 最終更新日: YYYY-MM-DD / YYYY-MM-DD
@@ -9,7 +9,7 @@
 
 <!-- どのパターン・どのセグメントに効かせるのか。根拠となる分析へリンクする -->
 
-- 根拠: <!-- [ANL-NNN](../analysis/ANL-NNN_xxx.md) / [STR-NNN](../strategy/STR-NNN_xxx.md) -->
+- 根拠: <!-- [ANL-NNN](../analysis/<担当者名>/ANL-NNN_xxx.md) / [STR-NNN](../strategy/STR-NNN_xxx.md) -->
 - 根拠の種別: <!-- 一次資料 / ヒアリング / 定量分析。三次資料のみの場合は起案しない -->
 
 ## 施策概要
