@@ -229,9 +229,17 @@ __marimo__/
 /data/**
 !/data/README.md
 
-# 分析の作業用出力。成果物は docs/analysis/<分析ID>/ 配下に置く
+# 分析の作業用出力。成果物は docs/analysis/<担当者名>/<分析ID>/ 配下に置く
 /outputs/
 *.ipynb_checkpoints/
+
+# ノートブックは探索用の作業場であり、成果物ではない。
+# 出力セルに受領データの中身（個人を特定しうる値を含む）がそのまま残るため、
+# 場所を問わず一切コミットしない。運用は notebooks/README.md。
+# 残す価値が出た集計は scripts/<担当者名>/ANL-NNN_*.py に書き直す。
+*.ipynb
+/notebooks/**
+!/notebooks/README.md
 
 # 図・集計値は docs/analysis/<分析ID>/ 配下のものだけを追跡する。
 # それ以外の場所に散った png/csv は成果物ではないため無視する。
